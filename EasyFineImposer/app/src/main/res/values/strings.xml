@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EasyFineImposer</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_send_sms">SendSMS</string>
+    <string name="title_activity_fines">Fines</string>
+</resources>
