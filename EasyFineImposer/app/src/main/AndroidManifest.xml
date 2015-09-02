@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hasi.easyfineimposer" >
 
+    <!-- SmS Permissions -->
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <!-- Internet Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -23,8 +26,24 @@
             android:label="@string/title_activity_send_sms" >
         </activity>
         <activity
-            android:name=".Fines"
-            android:label="@string/title_activity_fines" >
+            android:name=".Login"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".MainMenu"
+            android:label="@string/title_activity_main_menu" >
+        </activity>
+        <activity
+            android:name=".Get_Cloud_Data"
+            android:label="@string/title_activity_cloud__location_" >
+        </activity>
+        <activity
+            android:name=".Impose_Fines"
+            android:label="@string/title_activity_impose__fines" >
+        </activity>
+        <activity
+            android:name=".ViewImposedFines"
+            android:label="@string/title_activity_view_imposed_fines" >
         </activity>
     </application>
 

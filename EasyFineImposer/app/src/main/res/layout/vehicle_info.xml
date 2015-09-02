@@ -1,0 +1,377 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.hasi.easyfineimposer.Vehicle_Details">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Vehicle Information"
+            android:id="@+id/textView12"
+            android:textColor="#ff3021ff" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="20px"
+        android:layout_height="140px"
+        android:id="@+id/space" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/space">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView" >
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView"
+                android:fillViewport="false"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TableLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Vehicle Number : "
+                                    android:id="@+id/textView3" />
+
+                                <Space
+                                    android:layout_width="30px"
+                                    android:layout_height="60px"
+                                    android:minHeight="20dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:longClickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:id="@+id/vehicleNoText"
+                                    android:minWidth="350dp" />
+
+                            </TableRow>
+
+                            <Space
+                                android:layout_width="20px"
+                                android:layout_height="60px"
+                                android:minHeight="20dp"
+                                android:nestedScrollingEnabled="false"
+                                android:longClickable="false" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Vehicle Model: "
+                                    android:id="@+id/textView4" />
+
+                                <Space
+                                    android:layout_width="30px"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="20dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:longClickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:id="@+id/vehicleModelText"
+                                    android:minWidth="350dp" />
+                            </TableRow>
+
+                            <Space
+                                android:layout_width="20px"
+                                android:layout_height="60px"
+                                android:minHeight="20dp"
+                                android:nestedScrollingEnabled="false"
+                                android:longClickable="false" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:dividerPadding="20dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Engine Number : "
+                                    android:id="@+id/textView5" />
+
+                                <Space
+                                    android:layout_width="30px"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="20dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:longClickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:id="@+id/engineText"
+                                    android:minWidth="350dp" />
+                            </TableRow>
+
+                            <Space
+                                android:layout_width="20px"
+                                android:layout_height="60px"
+                                android:minHeight="20dp"
+                                android:nestedScrollingEnabled="false"
+                                android:longClickable="false" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Chassis Number : "
+                                    android:id="@+id/textView6" />
+
+                                <Space
+                                    android:layout_width="30px"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="20dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:longClickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:id="@+id/chassisText"
+                                    android:minWidth="350dp" />
+                            </TableRow>
+
+                            <Space
+                                android:layout_width="20px"
+                                android:layout_height="60px"
+                                android:minHeight="20dp"
+                                android:nestedScrollingEnabled="false"
+                                android:longClickable="false" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Rev Licence Exp Date : "
+                                    android:id="@+id/textView7" />
+
+                                <Space
+                                    android:layout_width="30px"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="20dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:longClickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:id="@+id/licenceText"
+                                    android:minWidth="350dp" />
+                            </TableRow>
+
+                            <Space
+                                android:layout_width="20px"
+                                android:layout_height="60px"
+                                android:minHeight="20dp"
+                                android:nestedScrollingEnabled="false"
+                                android:longClickable="false" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Insurance Exp Date :"
+                                    android:id="@+id/textView8" />
+
+                                <Space
+                                    android:layout_width="30px"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="20dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:longClickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:id="@+id/insuranceText"
+                                    android:minWidth="350dp" />
+                            </TableRow>
+
+                            <Space
+                                android:layout_width="20px"
+                                android:layout_height="60px"
+                                android:minHeight="20dp"
+                                android:nestedScrollingEnabled="false"
+                                android:longClickable="false" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Owner Name :"
+                                    android:id="@+id/textView9" />
+
+                                <Space
+                                    android:layout_width="30px"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="20dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:longClickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:id="@+id/ownerNameText"
+                                    android:minWidth="350dp" />
+                            </TableRow>
+
+                            <Space
+                                android:layout_width="20px"
+                                android:layout_height="60px"
+                                android:minHeight="20dp"
+                                android:nestedScrollingEnabled="false"
+                                android:longClickable="false" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Owner ID :"
+                                    android:id="@+id/textView10" />
+
+                                <Space
+                                    android:layout_width="30px"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="20dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:longClickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:id="@+id/ownerIDText"
+                                    android:minWidth="350dp" />
+                            </TableRow>
+
+                            <Space
+                                android:layout_width="20px"
+                                android:layout_height="60px"
+                                android:minHeight="20dp"
+                                android:nestedScrollingEnabled="false"
+                                android:longClickable="false" />
+
+                            <TableRow
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:text="Contact No :"
+                                    android:id="@+id/textView11" />
+
+                                <Space
+                                    android:layout_width="30px"
+                                    android:layout_height="wrap_content"
+                                    android:minHeight="20dp"
+                                    android:nestedScrollingEnabled="false"
+                                    android:longClickable="false" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textAppearance="?android:attr/textAppearanceLarge"
+                                    android:id="@+id/contactText"
+                                    android:minWidth="350dp" />
+                            </TableRow>
+                        </TableLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            style="?android:attr/buttonStyleSmall"
+                            android:layout_width="246dp"
+                            android:layout_height="wrap_content"
+                            android:text="Impose Fines"
+                            android:id="@+id/fineButton"
+                            android:layout_gravity="right"
+                            android:textColor="#ff1512ff"
+                            android:onClick="onImposeFineClicked" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+</RelativeLayout>

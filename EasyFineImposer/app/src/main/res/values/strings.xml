@@ -5,4 +5,10 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_send_sms">SendSMS</string>
     <string name="title_activity_fines">Fines</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_main_menu">MainMenu</string>
+    <string name="title_activity_cloud__location_">Cloud_Location_Activity</string>
+    <string name="title_activity_impose_fines">ImposeFines</string>
+    <string name="title_activity_impose__fines">Impose_Fines</string>
+    <string name="title_activity_view_imposed_fines">ViewImposedFines</string>
 </resources>

@@ -1,6 +1,6 @@
 package com.hasi.easyfineimposer;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -8,12 +8,15 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
-public class SendSMS extends ActionBarActivity {
+public class SendSMS extends Activity {
 
     TextView sendMessage;
-    EditText number;
+    EditText number,nameText,nicText,vehNo;
+    String message,cost,name,nic;
+    DatabaseHandler dbh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +24,11 @@ public class SendSMS extends ActionBarActivity {
 
         sendMessage=(TextView)findViewById(R.id.fineText);
         number=(EditText)findViewById(R.id.number);
+        nameText=(EditText)findViewById(R.id.nameText);
+        nicText=(EditText)findViewById(R.id.nicText);
+        vehNo=(EditText)findViewById(R.id.vehNo);
+
+        dbh=new DatabaseHandler(this,null,null,1);
 
         Bundle fines=getIntent().getExtras();
         if(fines==null){
@@ -28,43 +36,55 @@ public class SendSMS extends ActionBarActivity {
             return;
         }
 
-        String message=fines.getString("message");
-        String cost=fines.getString("cost");
-        sendMessage.setText("Dear Sir,\n your vehicle was subjected to following fines \n"+message+"\n Total Cost is Rs:"+cost);
+        message=fines.getString("message");
+        cost=fines.getString("cost");
+        sendMessage.setText("Dear Sir,\nYour vehicle was subjected to following fines \n"+message+"\nTotal Cost is Rs:"+cost);
 
+
+
+    }
+    public void onNumberClick(View view){
+        //sendMessage.setText("Dear Sir,\nYour vehicle was subjected to following fines \n"+message+"\nTotal Cost is Rs:"+cost+"\nThis message is send from Sri Lanka Police to " + nameText.getText().toString() + " NIC " + nicText.getText().toString());
 
     }
 
     public void onClick(View view){
-        if(number.getText().toString()!=null) {
-            MessageSender msg = new MessageSender();
-            msg.sendSMS(number.getText().toString(),sendMessage.getText().toString());
-            sendMessage.setText("Message sent");
 
-
+        if( nameText.getText().toString().trim().equals(""))
+        {
+            Toast.makeText(getBaseContext(),"Please Enter a Valid Name ", Toast.LENGTH_SHORT).show();
         }
-    }
+        else
+        {
+            if( nicText.getText().toString().trim().equals(""))
+            {
+                Toast.makeText(getBaseContext(),"Please Enter a NIC number ", Toast.LENGTH_SHORT).show();
+            }
+            else
+            {
+                if(number.getText().toString().trim().equals("")) {
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_send_sm, menu);
-        return true;
-    }
+                    Toast.makeText(getBaseContext(),"Please Enter a Valid Phone Number ", Toast.LENGTH_SHORT).show();
+
+                }else{
+
+                    MessageSender msg = new MessageSender();
+                 //   msg.sendSMS(number.getText().toString(), sendMessage.getText().toString());
+                    dbh.addFine(nicText.getText().toString(),nameText.getText().toString(),message,vehNo.getText().toString(),cost);
+                    Toast.makeText(getBaseContext(),"Message Sent.. ", Toast.LENGTH_SHORT).show();
 
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+
+                }
+
+            }
         }
 
-        return super.onOptionsItemSelected(item);
+
     }
+
+
+
+
 }
