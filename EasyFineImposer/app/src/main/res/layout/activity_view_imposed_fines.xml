@@ -4,19 +4,111 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.hasi.easyfineimposer.ViewImposedFines">
+    tools:context="com.hasi.easyfineimposer.ViewImposedFines"
+    android:background="@drawable/back1">
 
     <HorizontalScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/horizontalScrollView2" >
 
-        <ListView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/listView2"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView2"
+                    android:text="Name"
+                    android:textColorHighlight="#f52bff1b"
+                    android:textIsSelectable="false"
+                    android:textSize="20dp"
+                    android:textColor="#ff740698" />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView18"
+                    android:text="NIC"
+                    android:textColorHighlight="#f52bff1b"
+                    android:textIsSelectable="false"
+                    android:textSize="20dp"
+                    android:textColor="#ff740698" />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView19"
+                    android:text="Contact No"
+                    android:textColorHighlight="#f52bff1b"
+                    android:textIsSelectable="false"
+                    android:textSize="20dp"
+                    android:textColor="#ff740698" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView20"
+                    android:layout_gravity="right"
+                    android:text="Fines Imposed"
+                    android:textColorHighlight="#f52bff1b"
+                    android:textIsSelectable="false"
+                    android:textSize="20dp"
+                    android:textColor="#ff740698" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView21"
+                    android:text="Amount (LKR)"
+                    android:textColorHighlight="#f52bff1b"
+                    android:textIsSelectable="false"
+                    android:textSize="20dp"
+                    android:textColor="#ff740698" />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView13"
+                    android:text="Date &amp; Time"
+                    android:textColorHighlight="#f52bff1b"
+                    android:textIsSelectable="false"
+                    android:textSize="20dp"
+                    android:textColor="#ff740698" />
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/textView14"
+                    android:text="Location"
+                    android:textColorHighlight="#f52bff1b"
+                    android:textIsSelectable="false"
+                    android:textSize="20dp"
+                    android:textColor="#ff740698" />
+
+            </TableRow>
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/listView2"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </LinearLayout>
     </HorizontalScrollView>
+
 </RelativeLayout>

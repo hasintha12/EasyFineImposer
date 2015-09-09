@@ -4,32 +4,31 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/back1"
     tools:context="com.hasi.easyfineimposer.Vehicle_Details">
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="385dp"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Vehicle Information"
+            android:text="       Vehicle Information"
             android:id="@+id/textView12"
-            android:textColor="#ff3021ff" />
+            android:textColor="#ff000000"
+            android:textSize="30dp" />
     </LinearLayout>
-
-    <Space
-        android:layout_width="20px"
-        android:layout_height="140px"
-        android:id="@+id/space" />
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/space">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:layout_below="@+id/linearLayout">
 
         <HorizontalScrollView
             android:layout_width="wrap_content"
@@ -87,7 +86,7 @@
 
                             <Space
                                 android:layout_width="20px"
-                                android:layout_height="60px"
+                                android:layout_height="40px"
                                 android:minHeight="20dp"
                                 android:nestedScrollingEnabled="false"
                                 android:longClickable="false" />
@@ -120,7 +119,7 @@
 
                             <Space
                                 android:layout_width="20px"
-                                android:layout_height="60px"
+                                android:layout_height="40px"
                                 android:minHeight="20dp"
                                 android:nestedScrollingEnabled="false"
                                 android:longClickable="false" />
@@ -154,7 +153,7 @@
 
                             <Space
                                 android:layout_width="20px"
-                                android:layout_height="60px"
+                                android:layout_height="40px"
                                 android:minHeight="20dp"
                                 android:nestedScrollingEnabled="false"
                                 android:longClickable="false" />
@@ -187,7 +186,7 @@
 
                             <Space
                                 android:layout_width="20px"
-                                android:layout_height="60px"
+                                android:layout_height="40px"
                                 android:minHeight="20dp"
                                 android:nestedScrollingEnabled="false"
                                 android:longClickable="false" />
@@ -220,7 +219,7 @@
 
                             <Space
                                 android:layout_width="20px"
-                                android:layout_height="60px"
+                                android:layout_height="40px"
                                 android:minHeight="20dp"
                                 android:nestedScrollingEnabled="false"
                                 android:longClickable="false" />
@@ -253,7 +252,7 @@
 
                             <Space
                                 android:layout_width="20px"
-                                android:layout_height="60px"
+                                android:layout_height="40px"
                                 android:minHeight="20dp"
                                 android:nestedScrollingEnabled="false"
                                 android:longClickable="false" />
@@ -286,7 +285,7 @@
 
                             <Space
                                 android:layout_width="20px"
-                                android:layout_height="60px"
+                                android:layout_height="40px"
                                 android:minHeight="20dp"
                                 android:nestedScrollingEnabled="false"
                                 android:longClickable="false" />
@@ -319,7 +318,7 @@
 
                             <Space
                                 android:layout_width="20px"
-                                android:layout_height="60px"
+                                android:layout_height="40px"
                                 android:minHeight="20dp"
                                 android:nestedScrollingEnabled="false"
                                 android:longClickable="false" />
@@ -357,15 +356,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <Button
-                            style="?android:attr/buttonStyleSmall"
-                            android:layout_width="246dp"
-                            android:layout_height="wrap_content"
-                            android:text="Impose Fines"
-                            android:id="@+id/fineButton"
-                            android:layout_gravity="right"
-                            android:textColor="#ff1512ff"
-                            android:onClick="onImposeFineClicked" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -373,5 +363,16 @@
         </HorizontalScrollView>
 
     </LinearLayout>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Impose Fines"
+        android:id="@+id/fineButton"
+        android:onClick="onImposeFineClicked"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/linearLayout2"
+        android:layout_alignEnd="@+id/linearLayout2" />
 
 </RelativeLayout>

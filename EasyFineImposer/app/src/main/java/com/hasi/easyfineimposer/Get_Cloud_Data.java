@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 import android.content.Intent;
+import android.widget.Toast;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -78,11 +79,15 @@ public class Get_Cloud_Data extends Activity {
         vehicle_no=MainMenu.getString("vehicle_no");
 
 
+  try {
 
 
-        
-        new LoadVehicleInfo().execute(); //makes the instance of the inner class to load the single detail
+      new LoadVehicleInfo().execute(); //makes the instance of the inner class to load the single detail
+  }catch (Exception e){
 
+      Toast.makeText(this, "Failed to load vehicle data", Toast.LENGTH_SHORT).show();
+
+  }
         
 
 

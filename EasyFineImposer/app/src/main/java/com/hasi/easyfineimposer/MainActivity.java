@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
        // MessageSender msg=new MessageSender();
        // msg.sendSMS("0718647048","hasintha");
         DatabaseHandler dbh=new DatabaseHandler(this,null,null,1);
-        dbh.addUser("police","1234");
+        dbh.addUser("h","1234");
         Intent i=new Intent(this,Login.class);
         startActivity(i);
 

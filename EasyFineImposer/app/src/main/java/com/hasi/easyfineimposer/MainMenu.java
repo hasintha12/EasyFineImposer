@@ -1,14 +1,18 @@
 package com.hasi.easyfineimposer;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
+import android.net.ConnectivityManager;
+import android.widget.Toast;
 
-public class MainMenu extends ActionBarActivity {
+public class MainMenu extends Activity {
 
     EditText vehicleNo;
     @Override
@@ -22,36 +26,57 @@ public class MainMenu extends ActionBarActivity {
     @Override
     public void onBackPressed() {
 
+        AlertDialog.Builder quitMsg=new AlertDialog.Builder(this);
+        quitMsg.setTitle("Logout");
+        quitMsg.setMessage("Are you sure you want to quit?");
+        quitMsg.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+            public void onClick(DialogInterface dialog, int which) {
+
+                finish();
+                Intent intent = new Intent(Intent.ACTION_MAIN);
+                intent.addCategory(Intent.CATEGORY_HOME);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+
+                dialog.dismiss();
+            }
+
+        });
+
+        quitMsg.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // Do nothing
+                dialog.dismiss();
+            }
+        });
+
+        AlertDialog alert = quitMsg.create();
+        alert.show();
+
+
+
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
 
     public void vehicleInfoClick(View view){
 
         Intent i=new Intent(this,Get_Cloud_Data.class);
-        i.putExtra("vehicle_no",vehicleNo.getText().toString());
-        startActivity(i);
+       if(vehicleNo.getText().toString().trim().equals("") || vehicleNo.getText().toString().length()!=6){
 
+           Toast.makeText(this, "Enter a Valid Vehicle Number", Toast.LENGTH_SHORT).show();
+
+       }else{
+
+           if(this.isInternetOn()){
+               i.putExtra("vehicle_no",vehicleNo.getText().toString());
+               startActivity(i);}
+
+
+       }
     }
     public void OnImposefineClicked(View view){
 
@@ -65,4 +90,33 @@ public class MainMenu extends ActionBarActivity {
         startActivity(i);
 
     }
+        /*check internet connectivity*/
+    public final boolean isInternetOn() {
+
+        // get Connectivity Manager object to check connection
+        ConnectivityManager connec =
+                (ConnectivityManager)getSystemService(getBaseContext().CONNECTIVITY_SERVICE);
+
+        // Check for network connections
+        if ( connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTED ||
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTING ||
+                connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.CONNECTED ) {
+
+            // if connected with internet
+
+            Toast.makeText(this, " Connected ", Toast.LENGTH_LONG).show();
+            return true;
+
+        } else if (
+                connec.getNetworkInfo(0).getState() == android.net.NetworkInfo.State.DISCONNECTED ||
+                        connec.getNetworkInfo(1).getState() == android.net.NetworkInfo.State.DISCONNECTED  ) {
+
+            Toast.makeText(this, "Internet Connection Fail", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return false;
+    }
+
+
 }

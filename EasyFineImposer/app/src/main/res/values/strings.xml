@@ -11,4 +11,5 @@
     <string name="title_activity_impose_fines">ImposeFines</string>
     <string name="title_activity_impose__fines">Impose_Fines</string>
     <string name="title_activity_view_imposed_fines">ViewImposedFines</string>
+    <string name="title_activity_change_password">ChangePassword</string>
 </resources>

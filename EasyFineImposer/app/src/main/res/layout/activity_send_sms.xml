@@ -4,7 +4,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.hasi.easyfineimposer.SendSMS">
+    tools:context="com.hasi.easyfineimposer.SendSMS"
+    android:background="@drawable/back1">
 
     <LinearLayout
         android:orientation="vertical"
@@ -12,105 +13,33 @@
         android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
-        <TextView
-            android:layout_width="311dp"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="SEND MESSAGE"
-            android:id="@+id/textView16" />
-
-        <Space
-            android:layout_width="20px"
-            android:layout_height="40px" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="232dp"
-            android:text=".."
-            android:id="@+id/fineText"
-            android:minWidth="250dp"
-            android:minLines="3"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignRight="@+id/smsbutton"
-            android:layout_alignEnd="@+id/smsbutton" />
+        android:layout_alignParentEnd="true"
+        >
 
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="375dp"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_width="158dp"
-                android:layout_height="match_parent">
-
-                <Space
-                    android:layout_width="20px"
-                    android:layout_height="8px" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Name"
-                    android:id="@+id/textView13" />
-
-                <Space
-                    android:layout_width="20px"
-                    android:layout_height="70px" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="National ID"
-                    android:id="@+id/textView14" />
-
-                <Space
-                    android:layout_width="20px"
-                    android:layout_height="70px" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Contact No"
-                    android:id="@+id/textView15" />
-
-                <Space
-                    android:layout_width="20px"
-                    android:layout_height="70px" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Vehicle No"
-                    android:id="@+id/textView17" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:ems="10"
                     android:id="@+id/nameText"
                     android:layout_above="@+id/smsbutton"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_alignParentEnd="true"
+                    android:hint="Name" />
 
                 <Space
                     android:layout_width="20px"
-                    android:layout_height="50px" />
+                    android:layout_height="25px" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -120,11 +49,12 @@
                     android:id="@+id/nicText"
                     android:layout_above="@+id/smsbutton"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_alignParentEnd="true"
+                    android:hint="NIC" />
 
                 <Space
                     android:layout_width="20px"
-                    android:layout_height="50px" />
+                    android:layout_height="25px" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -135,11 +65,12 @@
                     android:layout_above="@+id/smsbutton"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:onClick="onNumberClick" />
+                    android:onClick="onNumberClick"
+                    android:hint="Contact No" />
 
                 <Space
                     android:layout_width="20px"
-                    android:layout_height="50px" />
+                    android:layout_height="25px" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -150,25 +81,60 @@
                     android:layout_above="@+id/smsbutton"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:onClick="onNumberClick" />
+                    android:onClick="onNumberClick"
+                    android:hint="Vehicle No" />
 
                 <Space
                     android:layout_width="20px"
-                    android:layout_height="50px" />
+                    android:layout_height="25px" />
 
-                <Button
-                    android:layout_width="155dp"
+                <EditText
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Send"
-                    android:id="@+id/smsbutton"
-                    android:onClick="onClick"
-                    android:layout_alignParentBottom="true"
+                    android:ems="10"
+                    android:id="@+id/location"
+                    android:layout_above="@+id/smsbutton"
                     android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+                    android:layout_alignParentEnd="true"
+                    android:onClick="onNumberClick"
+                    android:hint="Location"
+                    android:singleLine="true"
+                    android:inputType="text" />
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="288dp"
+            android:id="@+id/scrollView2"
+            android:background="#4a0c2dff">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="246dp"
+                android:text=".."
+                android:id="@+id/fineText"
+                android:minWidth="250dp"
+                android:minLines="3"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignRight="@+id/smsbutton"
+                android:layout_alignEnd="@+id/smsbutton"
+                android:nestedScrollingEnabled="true" />
+        </ScrollView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:id="@+id/smsbutton"
+            android:onClick="onClick"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </LinearLayout>
 

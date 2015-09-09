@@ -5,7 +5,23 @@ package com.hasi.easyfineimposer;
  */
 public class FineData {
 
-    private String name,nic,description,amount,vehicleNo;
+    private String name,nic,description,amount,vehicleNo,location,dateTime;
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(String dateTime) {
+        this.dateTime = dateTime;
+    }
 
     public String getVehicleNo() {
         return vehicleNo;

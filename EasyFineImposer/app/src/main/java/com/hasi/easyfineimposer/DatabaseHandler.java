@@ -3,7 +3,7 @@ package com.hasi.easyfineimposer;
 /**
  * Created by hasintha on 8/12/15.
  */
-//https://www.thenewboston.com/forum/topic.php?id=3767
+
 
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -31,12 +31,12 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String Column_Amount = "amount";
     public static final String Column_NIC = "nic";
     public static final String Column_Name = "name";
+    public static final String Column_Locationn = "location";
+    public static final String Column_DateTime = "date";
 
-    public static final String Table_Owner = "owner";
 
 
     public static final String Table_ImposedFines = "ImposedFines";
-    public static final String Column_FID = "id";
     public static final String Column_UNIC = "nic";
 
     public SQLiteDatabase db;
@@ -58,6 +58,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 Column_Name+ " TEXT, " +
                 Column_Description + " TEXT ," +
                 Column_VNumber + " TEXT ," +
+                Column_Locationn + " TEXT ," +
+                Column_DateTime + " TEXT ," +
                 Column_Amount + " TEXT " +
                 ");";
         db.execSQL(query);
@@ -116,7 +118,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //insert fine values into a database
-    public void addFine(String nic, String name,String description,String vehNo, String amount){
+    public void addFine(String nic, String name,String description,String vehNo, String amount,String location,String dateTime){
         ContentValues values = new ContentValues();
         db=this.getWritableDatabase();
             try {
@@ -126,6 +128,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 values.put(Column_Amount, amount);
                 values.put(Column_Description, description);
                 values.put(Column_Amount, amount);
+                values.put(Column_Locationn, location);
+                values.put(Column_DateTime, dateTime);
 
                 db.insert(Table_Fine, null, values);
                 db.close();
@@ -165,6 +169,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     fData[i].setAmount(cusr.getString(cusr.getColumnIndex(Column_Amount)));
                     fData[i].setVehicleNo(cusr.getString(cusr.getColumnIndex(Column_VNumber)));
                     fData[i].setDescription(cusr.getString(cusr.getColumnIndex(Column_Description)));
+                    fData[i].setLocation(cusr.getString(cusr.getColumnIndex(Column_Locationn)));
+                    fData[i].setDateTime(cusr.getString(cusr.getColumnIndex(Column_DateTime)));
                     i++;
                     cusr.moveToNext();
 
@@ -222,6 +228,45 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
 
 
+
+    }
+    /*change password of the user*/
+    public String changePW(String userName,String newUserName,String oldPassword, String newPassword){
+         String message="";
+
+
+
+        SQLiteDatabase dbw = getWritableDatabase();
+
+        try {
+
+            String query = "SELECT * FROM " + Table_User + " WHERE " + Column_UserName + "='" + userName + "' ";
+            //Cursor points to a location in your results
+            Cursor c = dbw.rawQuery(query, null);
+            //Move to the first row in your results
+            c.moveToFirst();
+            c.moveToFirst();//move the curser to the first result
+
+
+
+           if (c.getString(c.getColumnIndex(Column_PW)).equals(oldPassword)) {
+               dbw.delete(Table_User,Column_UserName+"='"+userName+"'",null);
+                this.addUser(newUserName, newPassword);
+                message="password changed";
+            }else {
+
+                message="Enter correct current username and password";
+            }
+
+        }catch(Exception e){
+
+            message="Error!";
+        }
+
+
+        finally {
+            return message;
+        }
 
     }
 }

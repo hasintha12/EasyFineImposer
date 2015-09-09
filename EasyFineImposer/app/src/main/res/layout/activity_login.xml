@@ -4,37 +4,30 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.hasi.easyfineimposer.Login">
+    tools:context="com.hasi.easyfineimposer.Login"
+    android:background="@drawable/back1">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:id="@+id/loginButton"
-            android:layout_marginRight="51dp"
-            android:layout_marginEnd="51dp"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:onClick="onLoginClick" />
+        android:background="#0c4a4141"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/nameText"
-            android:layout_marginTop="59dp"
+            android:layout_marginTop="91dp"
             android:minHeight="40dp"
             android:minWidth="200dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:textColor="#ff000000"
+            android:background="#1e000000"
+            android:backgroundTint="#ff2a29ff"
+            android:hint="User Name"
+            android:layout_below="@+id/textView"
+            android:layout_centerHorizontal="true" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -42,12 +35,41 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/passwordText"
+            android:minWidth="200dp"
+            android:minHeight="40dp"
+            android:textColor="#ff000000"
+            android:background="#1e000000"
+            android:backgroundTint="#ff2a29ff"
+            android:hint="Password"
             android:layout_below="@+id/nameText"
             android:layout_alignLeft="@+id/nameText"
             android:layout_alignStart="@+id/nameText"
-            android:layout_marginTop="42dp"
-            android:minWidth="200dp"
-            android:minHeight="40dp" />
+            android:layout_marginTop="50dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login"
+            android:id="@+id/loginButton"
+            android:onClick="onLoginClick"
+            android:textColor="#ff000000"
+            android:background="#281c1c1c"
+            android:clickable="true"
+            android:layout_below="@+id/passwordText"
+            android:layout_alignRight="@+id/passwordText"
+            android:layout_alignEnd="@+id/passwordText"
+            android:layout_marginTop="33dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Easy Fine Imposer"
+            android:id="@+id/textView"
+            android:layout_marginTop="37dp"
+            android:textSize="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
@@ -55,33 +77,14 @@
             android:layout_height="wrap_content"
             android:text="Change Password"
             android:id="@+id/changePW"
-            android:layout_marginTop="73dp"
-            android:layout_below="@+id/loginButton"
-            android:layout_alignLeft="@+id/passwordText"
-            android:layout_alignStart="@+id/passwordText"
-            android:layout_alignRight="@+id/passwordText"
-            android:layout_alignEnd="@+id/passwordText"
-            android:onClick="onChangePassword" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="User Name"
-            android:id="@+id/textView"
-            android:layout_alignBottom="@+id/nameText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Password"
-            android:id="@+id/textView2"
-            android:layout_alignBottom="@+id/passwordText"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:onClick="onChangePassword"
+            android:textColor="#ff000000"
+            android:background="#001c1c1c"
+            android:backgroundTint="#ff2a29ff"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
+
 </RelativeLayout>

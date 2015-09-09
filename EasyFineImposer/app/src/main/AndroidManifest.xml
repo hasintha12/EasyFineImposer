@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.SEND_SMS" />
     <!-- Internet Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- permission to check connectivity -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -44,6 +46,10 @@
         <activity
             android:name=".ViewImposedFines"
             android:label="@string/title_activity_view_imposed_fines" >
+        </activity>
+        <activity
+            android:name=".ChangePassword"
+            android:label="@string/title_activity_change_password" >
         </activity>
     </application>
 
